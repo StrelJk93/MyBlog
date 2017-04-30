@@ -1,0 +1,23 @@
+{
+  "name": "blog",
+  "description": "Its project very base. Project need for create post (its blog).",
+  "main": "index.js",
+  "authors": [
+    "Strel Jk <streljk@pandabox.studio>"
+  ],
+  "license": "ISC",
+  "homepage": "welcome",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "_html/libs/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
