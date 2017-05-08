@@ -60,9 +60,9 @@ gulp.task('css-main', ['sass'], function() {
 		.pipe(cssnano())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest('_html/css'))
-})
+});
 
-gulp.task('watch', ['browserSync', 'css-libs', 'js-libs', 'js-main'], function() {
+gulp.task('watch', ['browserSync', 'css-libs', 'css-main', 'js-libs', 'js-main'], function() {
 	gulp.watch('_html/sass/**/*.sass', ['sass']);
 	gulp.watch('_html/*.html', browserSync.reload);
 	gulp.watch('_html/js/**/*.js', browserSync.reload);
@@ -74,7 +74,7 @@ gulp.task('clear', function() {
 	return cache.clearAll();
 });
 
-gulp.task('build', ['clean', 'img', 'css-libs', 'js-libs', 'js-main'], function() {
+gulp.task('build', ['clean', 'img', 'css-libs', 'css-main', 'js-libs', 'js-main'], function() {
 	var buildCss = gulp.src([
 			'_html/css/main.min.css',
 			'_html/css/libs.min.css',
@@ -97,6 +97,7 @@ gulp.task('clean', function() {
 			'public/js/libs.min.js',
 			'public/css/main.min.css',
 			'public/css/libs.min.css',
+			'public/img/**/*',
 		]);
 });
 
